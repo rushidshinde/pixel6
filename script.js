@@ -109,6 +109,7 @@ function sendVerificationOtp(){
     document.getElementById('counterMessage').innerHTML = " "+count+"attempts left."
     console.log("Verification Code : "+otp);
 }
+
 function verifyCode(){
     let inputOtp = document.getElementById('otp').value;
 
@@ -122,7 +123,7 @@ function verifyCode(){
         alert("incorrect Verification Code..! try again");
         count--;
         document.getElementById('counterMessage').innerHTML = " "+count+"attempts left."
-        document.getElementById('otp').innerHTML = "  ";
+        document.getElementById('otp').value = " ";
     }
 }
 
