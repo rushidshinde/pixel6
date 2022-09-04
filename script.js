@@ -1,4 +1,4 @@
-
+// Form validation function
 function validate(){
     let fullName = document.getElementById('name').value;
     let email = document.getElementById('email').value;
@@ -42,16 +42,16 @@ function validate(){
         return false;
     }
 }
-function generateCaptcha(){
-    const min = 10;
-    const max = 99;
+// CAPTCHA generator
+function generateCaptcha(min, max){
     let diff = max - min;
     let rand = Math.floor((Math.random())* diff);
     rand = rand + min;
     return rand;
 }
+// show CAPTCHA in mathematical form
 function setCaptcha(){
-    window.captcha = generateCaptcha();
+    window.captcha = generateCaptcha(10,99);
     if(captcha % 2 == 0){
         let half = captcha / 2;
         let a = half + 2;
@@ -65,7 +65,7 @@ function setCaptcha(){
         document.getElementById('showCaptcha').innerHTML = a+" + "+b+" =";
     }
 }
-
+// convert amount number to words
 function intoTheWords(){
     let amountInput = document.getElementById('lAmount').value;
     let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
@@ -87,7 +87,7 @@ function intoTheWords(){
         document.getElementById('lAmountWords').innerHTML = "";
     }
 }
-
+// Get name and email values from url
 function getUrlParams(){
     let parameters = window.location.search;
     let urlParams = new URLSearchParams(parameters);
@@ -99,17 +99,14 @@ function getUrlParams(){
     document.getElementById('displayEmail').innerHTML = email;
 
 }
+// Generate OTP on thankYou page
 function sendVerificationOtp(){
-    const min = 1000;
-    const max = 9999;
-    let diff = max - min;
-    let rand = Math.floor((Math.random())* diff);
-    window.otp = rand + min;
+    window.otp = generateCaptcha(1000,9999);
     window.count = 3;
     document.getElementById('counterMessage').innerHTML = " "+count+"attempts left."
     console.log("Verification Code : "+otp);
 }
-
+// Verify OTP on thankYou page
 function verifyCode(){
     let inputOtp = document.getElementById('otp').value;
 

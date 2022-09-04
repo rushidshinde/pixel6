@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    Google font used for CAPTCHA only-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet">
     <!--  Style Sheet  -->
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Loan Application</title>
 </head>
 <body onload="setCaptcha()">
+    <!--  Navbar  -->
     <div class="navbar">
         <img src="https://pixel6.co/wp-content/themes/pixel6/img/logo.png" alt="logo">
     </div>
     <hr>
+    <!--  application body  -->
     <div class="container">
         <div class="card">
             <div class="card-title">
                 <h1>Loan Application</h1>
             </div>
             <div class="card-body">
+                <!--  Form start  -->
                 <form action="./thankYou.html" method="get" onsubmit="return validate()">
                     <div class="form-group">
                         <label for="name">Full Name:</label>
@@ -61,12 +65,14 @@
         </div>
     </div>
     <hr>
+    <!--  Footer  -->
     <div class="footer">
         <div class="card-img">
             <img src="https://pixel6.co/wp-content/themes/pixel6/img/logo.png" width="50px" alt="logo">
         </div>
         <div class="card-social">
             <ul>
+                <!--  Social Links  -->
                 <li class="list-title">Social</li>
                 <br>
                 <li class="list-item"><a href="https://twitter.com/pixel6web">Twitter</a></li>
@@ -75,6 +81,7 @@
         </div>
         <div class="card-contact">
             <ul>
+                <!--  Contact Info  -->
                 <li class="list-title">Contact</li>
                 <br>
                 <li class="list-item">Email : <a href="mailto: info@pixel6.co">info@pixel6.co</a></li>
