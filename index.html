@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet">
+    <!--  Style Sheet  -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body onload="setCaptcha()">
+    <div class="navbar">
+        <img src="https://pixel6.co/wp-content/themes/pixel6/img/logo.png" alt="logo">
+    </div>
+    <hr>
+    <div class="container">
+        <div class="card">
+            <div class="card-title">
+                <h1>Loan Application</h1>
+            </div>
+            <div class="card-body">
+                <form action="./thankYou.html" method="get" onsubmit="return validate()">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter full name starting with 'First Name'">
+                        <span id="nameError" class="errorSpan"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                        <span id="emailError" class="errorSpan"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="pan">PAN:</label>
+                        <input type="text" name="pan" class="form-control" id="pan" placeholder="Enter PAN number ex. 'ABCDE0123F'">
+                        <span id="panError" class="errorSpan"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lAmount">Loan Amount:</label>
+                        <input type="number" name="amount" onkeyup="intoTheWords()" class="form-control" id="lAmount" placeholder="Enter loan amount">
+                        <span id="amountError" class="errorSpan"></span>
+                        <p id="lAmountWords"></p>
+                    </div>
+                    <div class="captcha-container">
+                        <p id="showCaptcha" style="font-family: 'Water Brush', cursive; font-size: 48px;"></p>
+                    </div>
+                    <button type="button" id="reloadCaptcha" onclick="setCaptcha()">Refresh captcha</button>
+                    <div class="form-group" id="captchaDiv">
+                        <label for="captcha"></label>
+                        <input type="number" name="captcha" class="form-control" id="captcha" placeholder="Enter the CAPTCHA code above">
+                        <span id="captchaError" class="errorSpan"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <div class="card-img">
+            <img src="https://pixel6.co/wp-content/themes/pixel6/img/logo.png" width="50px" alt="logo">
+        </div>
+        <div class="card-social">
+            <ul>
+                <li class="list-title">Social</li>
+                <br>
+                <li class="list-item"><a href="https://twitter.com/pixel6web">Twitter</a></li>
+                <li class="list-item"><a href="https://www.facebook.com/pixel6.co">Facebook</a></li>
+            </ul>
+        </div>
+        <div class="card-contact">
+            <ul>
+                <li class="list-title">Contact</li>
+                <br>
+                <li class="list-item">Email : <a href="mailto: info@pixel6.co">info@pixel6.co</a></li>
+                <li class="list-item">Phone : <a href="tel: +918805060506">+91 8805060506</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="card-head">
+        <p>© 2022 Pixel6 Web Studio Pvt. Ltd.</p>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
