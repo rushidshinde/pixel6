@@ -119,3 +119,6 @@ ul{
 .card-head{
     text-align: right;
 }
+#displayEmail{
+    font-weight: bold;
+}
